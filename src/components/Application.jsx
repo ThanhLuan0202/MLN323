@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Globe, Users, ShieldAlert, Cpu, Award } from 'lucide-react';
+import img4 from '../img/4.jpg';
 
 const opportunities = [
   {
@@ -157,14 +158,28 @@ export default function Application() {
         {/* Infographic connecting bridge */}
         <motion.div 
           variants={itemVariants}
-          className="mt-12 w-full max-w-4xl p-6 rounded-xl bg-brand-dark-card border border-brand-gold/15 text-center shadow-lg"
+          className="mt-12 w-full max-w-4xl p-5 rounded-2xl bg-brand-dark-card border border-brand-gold/15 shadow-xl flex flex-col md:flex-row items-center gap-6 text-left relative overflow-hidden"
         >
-          <div className="font-cinzel text-xs text-brand-gold font-bold tracking-widest uppercase mb-2">Kết Luận Biện Chứng</div>
-          <p className="font-sans text-xs md:text-sm text-gray-300 italic">
-            "Muốn giải được bài toán Thách thức để đón đầu Cơ hội, sinh viên không thể đi một mình một cách thụ động hay ăn theo, mà phải rèn luyện 
-            <span className="text-brand-gold font-semibold"> năng lực tự thân vững mạnh (nội lực) </span> 
-            song song với việc tiếp thu có chọn lọc những giá trị thời đại (ngoại lực)."
-          </p>
+          {/* Historical landscape photo of Bác */}
+          <div className="w-full md:w-1/3 rounded-xl overflow-hidden border border-brand-gold/20 bg-brand-dark/40 flex items-center justify-center shadow-inner shrink-0 relative pointer-events-auto">
+            <img 
+              src={img4} 
+              alt="Bác Hồ chỉ đạo cách mạng" 
+              className="w-full max-h-36 object-contain filter sepia-[0.25] brightness-[0.85] contrast-[1.05] hover:sepia-0 hover:brightness-100 transition-all duration-500 ease-in-out"
+            />
+            <div className="absolute top-1 left-2 text-[7px] font-mono text-brand-gold/60 tracking-wider select-none">
+              DOC-ID: NATION-BUILD-1950
+            </div>
+          </div>
+          
+          <div className="flex-1">
+            <div className="font-cinzel text-xs text-brand-gold font-bold tracking-widest uppercase mb-2">Kết Luận Biện Chứng</div>
+            <p className="font-sans text-xs md:text-sm text-gray-300 italic leading-relaxed">
+              "Muốn giải được bài toán Thách thức để đón đầu Cơ hội, sinh viên không thể đi một mình một cách thụ động hay ăn theo, mà phải rèn luyện 
+              <span className="text-brand-gold font-semibold"> năng lực tự thân vững mạnh (nội lực) </span> 
+              song song với việc tiếp thu có chọn lọc những giá trị thời đại (ngoại lực)."
+            </p>
+          </div>
         </motion.div>
       </motion.div>
     </section>

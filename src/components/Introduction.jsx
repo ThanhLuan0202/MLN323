@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Laptop, Compass, Heart, Landmark, RefreshCw } from 'lucide-react';
+import img2 from '../img/2.jpg';
 
 export default function Introduction() {
   const containerVariants = {
@@ -116,6 +117,18 @@ export default function Introduction() {
               <div>
                 <h3 className="font-cinzel text-lg md:text-xl font-bold text-brand-red-light">HÀNH TRÌNH CỨU NƯỚC CỦA BÁC</h3>
                 <p className="text-[10px] text-brand-bronze font-sans uppercase tracking-widest">Tàu Latouche-Tréville - Năm 1911</p>
+              </div>
+            </div>
+
+            {/* Historical Landscape Photo of Uncle Ho */}
+            <div className="w-full rounded-xl overflow-hidden border border-brand-red/30 mb-5 bg-brand-dark/40 flex items-center justify-center shadow-[0_4px_15px_rgba(122,10,16,0.15)] relative pointer-events-auto">
+              <img 
+                src={img2} 
+                alt="Bác Hồ ra đi tìm đường cứu nước" 
+                className="w-full max-h-48 md:max-h-56 object-contain filter sepia-[0.3] brightness-[0.85] contrast-[1.05] group-hover:sepia-0 group-hover:brightness-100 transition-all duration-500 ease-in-out"
+              />
+              <div className="absolute top-1 left-2 text-[7px] font-mono text-brand-gold/60 tracking-wider select-none">
+                DOC-ID: LATOUCHE-1911
               </div>
             </div>
 

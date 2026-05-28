@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Background from './components/Background';
 import Navigation from './components/Navigation';
 import SlideControls from './components/SlideControls';
+import AIChatbot from './components/AIChatbot';
 
 // Import sections
 import Hero from './components/Hero';
@@ -183,6 +184,9 @@ export default function App() {
           totalSlides={slides.length}
         />
       )}
+
+      {/* Floating Academic AI Chatbot */}
+      <AIChatbot />
     </div>
   );
 }

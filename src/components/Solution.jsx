@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Handshake, CheckSquare, Shield, Globe, Award, Sparkles } from 'lucide-react';
+import img5 from '../img/5.jpg';
 
 const solutions = [
   {
@@ -121,6 +122,18 @@ export default function Solution() {
               <div className="flex items-center gap-2 text-brand-gold font-sans font-bold text-xs uppercase tracking-widest mb-4">
                 <CheckSquare size={14} />
                 <span>Chi tiết cẩm nang hành động</span>
+              </div>
+
+              {/* Landscape photo of Bác */}
+              <div className="w-full rounded-xl overflow-hidden border border-brand-gold/15 mb-4 bg-brand-dark/40 flex items-center justify-center relative pointer-events-auto">
+                <img 
+                  src={img5} 
+                  alt="Bài học và giải pháp từ Bác Hồ" 
+                  className="w-full max-h-48 md:max-h-56 object-contain filter sepia-[0.25] brightness-90 hover:brightness-100 hover:sepia-0 transition-all duration-500 ease-in-out"
+                />
+                <div className="absolute top-1 left-2 text-[7px] font-mono text-brand-gold/60 tracking-wider select-none">
+                  DOC-ID: LESSON-GLOBAL-1960
+                </div>
               </div>
 
               {/* Title & Pillar */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, Users, Handshake, Shield, HelpCircle, CheckCircle } from 'lucide-react';
+import img3 from '../img/3.jpg';
 
 const theoryPillars = [
   {
@@ -143,6 +144,18 @@ export default function Theory() {
                 <blockquote className="border-l-2 border-brand-gold pl-4 py-1.5 bg-brand-red/5 rounded-r-lg mb-6 font-playfair italic text-xs md:text-sm text-brand-parchment/90 leading-relaxed shadow-inner">
                   {activePillar.quote}
                 </blockquote>
+
+                {/* Historical landscape photo of Bác */}
+                <div className="w-full rounded-xl overflow-hidden border border-brand-gold/20 mb-5 bg-brand-dark/40 flex items-center justify-center shadow-[0_4px_15px_rgba(212,175,55,0.15)] relative pointer-events-auto">
+                  <img 
+                    src={img3} 
+                    alt="Bác Hồ và lý luận đoàn kết quốc tế" 
+                    className="w-full max-h-48 md:max-h-56 object-contain filter sepia-[0.25] brightness-[0.85] contrast-[1.05] group-hover:sepia-0 group-hover:brightness-100 transition-all duration-500 ease-in-out"
+                  />
+                  <div className="absolute top-1 left-2 text-[7px] font-mono text-brand-gold/60 tracking-wider select-none">
+                    DOC-ID: THEORY-DOC-1945
+                  </div>
+                </div>
 
                 {/* Bullets */}
                 <ul className="space-y-3.5 font-sans text-xs md:text-sm text-gray-300 leading-relaxed">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Presentation, Scroll, Compass } from 'lucide-react';
+import uncleHoImg from '../img/1.jpg';
 
 export default function Hero({ setViewMode, scrollToSection, setCurrentSlide }) {
   const containerVariants = {
@@ -44,19 +45,48 @@ export default function Hero({ setViewMode, scrollToSection, setCurrentSlide }) 
         animate="visible"
         className="z-10 text-center max-w-5xl flex flex-col items-center"
       >
-        {/* Revolutinary Star / Globe Badge */}
+        {/* Archival Horizontal Frame of Uncle Ho */}
         <motion.div 
           variants={globeVariants}
-          className="relative w-28 h-28 md:w-36 md:h-36 mb-6 flex items-center justify-center"
+          className="relative w-72 h-44 md:w-96 md:h-56 mb-8 flex items-center justify-center group"
         >
-          {/* Animated concentric gold borders */}
-          <div className="absolute inset-0 rounded-full border border-brand-gold/20 animate-[spin_20s_linear_infinite]" />
-          <div className="absolute inset-2 rounded-full border border-dashed border-brand-gold/40 animate-[spin_15s_linear_infinite_reverse]" />
-          <div className="absolute inset-4 rounded-full border-2 border-brand-red/30 shadow-[0_0_15px_rgba(122,10,16,0.3)]" />
+          {/* Cyber-academic connecting circle grids in the background */}
+          <div className="absolute w-80 h-80 rounded-full border border-dashed border-brand-gold/10 animate-[spin_60s_linear_infinite] pointer-events-none -z-10" />
+          <div className="absolute w-60 h-60 rounded-full border border-brand-red/10 animate-[spin_40s_linear_infinite_reverse] pointer-events-none -z-10" />
+
+          {/* Outer glowing border & Glassmorphism card backdrop */}
+          <div className="absolute inset-0 rounded-2xl bg-brand-dark-card/90 border border-brand-gold/25 shadow-[0_20px_50px_rgba(0,0,0,0.8)] transition-all duration-500 group-hover:border-brand-gold/60 group-hover:shadow-[0_0_35px_rgba(212,175,55,0.25)] p-3" />
+          <div className="absolute inset-1.5 rounded-[14px] border border-dashed border-brand-red/20 pointer-events-none" />
           
-          {/* Golden Center Globe Symbol */}
-          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-red/10 border border-brand-gold flex items-center justify-center shadow-[0_0_25px_rgba(212,175,55,0.3)]">
-            <span className="text-3xl md:text-4xl animate-pulse">⭐</span>
+          {/* Portrait of Uncle Ho inside the frame */}
+          <div className="absolute inset-3 rounded-lg overflow-hidden border border-brand-gold/20 bg-brand-dark flex items-center justify-center">
+            <img 
+              src={uncleHoImg} 
+              alt="Chân dung Chủ tịch Hồ Chí Minh" 
+              className="w-full h-full object-cover object-center filter sepia-[0.25] brightness-[0.9] contrast-[1.05] group-hover:sepia-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+            />
+            {/* Sheen sweep animation effect on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+          </div>
+
+          {/* Technical Corner Brackets */}
+          <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-brand-gold rounded-tl-lg pointer-events-none" />
+          <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-brand-gold rounded-tr-lg pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-brand-gold rounded-bl-lg pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-brand-gold rounded-br-lg pointer-events-none" />
+
+          {/* Archival Slogan Tag below the frame */}
+          <div className="absolute -bottom-3.5 px-4 py-1 bg-brand-dark border border-brand-gold/75 text-[10px] md:text-xs font-cinzel font-bold text-brand-gold tracking-[0.25em] rounded shadow-md z-20 transition-all duration-500 group-hover:bg-brand-red/20 group-hover:shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+            CHỦ TỊCH HỒ CHÍ MINH
+          </div>
+
+          {/* Retro digital metadata overlay */}
+          <div className="absolute top-1.5 left-4 text-[8px] font-mono text-brand-bronze/60 tracking-wider select-none">
+            SYS-ID: 1911-HCM
+          </div>
+          <div className="absolute top-1.5 right-4 text-[8px] font-mono text-brand-gold/60 tracking-wider flex items-center gap-1 select-none">
+            <span className="w-1 h-1 rounded-full bg-brand-red animate-ping" />
+            <span>HISTORIC_DOC</span>
           </div>
         </motion.div>
 
