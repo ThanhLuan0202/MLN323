@@ -13,6 +13,7 @@ import Introduction from './components/Introduction';
 import Theory from './components/Theory';
 import Application from './components/Application';
 import Solution from './components/Solution';
+import AIUsed from './components/AIUsed';
 import Conclusion from './components/Conclusion';
 
 const slides = [
@@ -21,7 +22,8 @@ const slides = [
   { id: 'theory', Component: Theory },
   { id: 'app', Component: Application },
   { id: 'solution', Component: Solution },
-  { id: 'conclusion', Component: Conclusion }
+  { id: 'conclusion', Component: Conclusion },
+  { id: 'aiused', Component: AIUsed }
 ];
 
 export default function App() {
@@ -147,6 +149,7 @@ export default function App() {
             <Application />
             <Solution />
             <Conclusion setViewMode={setViewMode} setCurrentSlide={handleSetCurrentSlide} />
+            <AIUsed />
           </div>
         ) : (
           // SLIDE MODE - Render slide with framer-motion transitions

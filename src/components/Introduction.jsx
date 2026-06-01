@@ -37,7 +37,7 @@ export default function Introduction() {
       >
         {/* Section Heading */}
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <span className="font-cinzel text-brand-gold text-sm tracking-widest font-bold border-b border-brand-gold/30 pb-2">SECTION II</span>
+          <span className="font-cinzel text-brand-gold text-sm tracking-widest font-bold border-b border-brand-gold/30 pb-2">SECTION I</span>
           <h2 className="font-cinzel text-3xl md:text-5xl font-black text-brand-parchment mt-4">
             ĐẶT VẤN ĐỀ
           </h2>
@@ -69,42 +69,7 @@ export default function Introduction() {
             <RefreshCw className="text-brand-gold animate-spin-slow" size={24} />
           </div>
 
-          {/* Column 1: Modern Student */}
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col bg-brand-dark-card/70 border border-brand-gold/10 rounded-3xl p-8 relative overflow-hidden group hover:border-brand-gold/30 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-          >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-bl-full -z-10" />
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold shadow-[0_0_10px_rgba(212,175,55,0.15)]">
-                <Laptop size={22} />
-              </div>
-              <div>
-                <h3 className="font-cinzel text-lg md:text-xl font-bold text-brand-gold">BÀI TOÁN SINH VIÊN HIỆN ĐẠI</h3>
-                <p className="text-[10px] text-brand-bronze font-sans uppercase tracking-widest">Thời Đại Công Nghệ Số & Đa Cực</p>
-              </div>
-            </div>
-
-            <ul className="space-y-4 font-sans text-sm text-gray-300 leading-relaxed">
-              <li className="flex gap-2">
-                <span className="text-brand-gold">▪</span>
-                <span><strong>Hội nhập số:</strong> Kết nối xuyên biên giới, làm việc với đa văn hóa nhưng dễ vấp phải định kiến xã hội.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-brand-gold">▪</span>
-                <span><strong>Xung đột đa cực:</strong> Các quốc gia vừa hợp tác vừa cạnh tranh, yêu cầu cá nhân phải liên tục thích ứng, ứng xử ngoại giao khéo léo.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-brand-gold">▪</span>
-                <span><strong>Đánh mất gốc rễ:</strong> Tiếp thu văn hóa thế giới một cách thụ động, dễ dẫn đến hiện tượng "bắt chước máy móc" làm lu mờ giá trị Việt Nam.</span>
-              </li>
-              <li className="flex gap-2 border-t border-brand-gold/10 pt-4 text-brand-parchment font-semibold italic text-xs md:text-sm">
-                <span>Câu hỏi đặt ra: Làm sao để hội nhập quốc tế bình đẳng nhưng vẫn giữ vững tư duy độc lập, đạo đức và bản sắc dân tộc?</span>
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* Column 2: Nguyen Tat Thanh (Anh Ba) */}
+          {/* Column 1: Nguyen Tat Thanh (Anh Ba) */}
           <motion.div 
             variants={itemVariants}
             className="flex flex-col bg-brand-dark-card/70 border border-brand-red/20 rounded-3xl p-8 relative overflow-hidden group hover:border-brand-red/40 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
@@ -147,6 +112,41 @@ export default function Introduction() {
               </li>
               <li className="flex gap-2 border-t border-brand-red/20 pt-4 text-brand-gold font-semibold italic text-xs md:text-sm">
                 <span>Bài học lịch sử: Tự lực cánh sinh, chủ động tiếp thu tri thức nhân loại để phục vụ tổ quốc chính là gốc rễ của Công dân toàn cầu!</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Column 2: Modern Student */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex flex-col bg-brand-dark-card/70 border border-brand-gold/10 rounded-3xl p-8 relative overflow-hidden group hover:border-brand-gold/30 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+          >
+            <div className="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-bl-full -z-10" />
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold shadow-[0_0_10px_rgba(212,175,55,0.15)]">
+                <Laptop size={22} />
+              </div>
+              <div>
+                <h3 className="font-cinzel text-lg md:text-xl font-bold text-brand-gold">BÀI TOÁN SINH VIÊN HIỆN ĐẠI</h3>
+                <p className="text-[10px] text-brand-bronze font-sans uppercase tracking-widest">Thời Đại Công Nghệ Số & Đa Cực</p>
+              </div>
+            </div>
+
+            <ul className="space-y-4 font-sans text-sm text-gray-300 leading-relaxed">
+              <li className="flex gap-2">
+                <span className="text-brand-gold">▪</span>
+                <span><strong>Hội nhập số:</strong> Kết nối xuyên biên giới, làm việc với đa văn hóa nhưng dễ vấp phải định kiến xã hội.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-brand-gold">▪</span>
+                <span><strong>Xung đột đa cực:</strong> Các quốc gia vừa hợp tác vừa cạnh tranh, yêu cầu cá nhân phải liên tục thích ứng, ứng xử ngoại giao khéo léo.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-brand-gold">▪</span>
+                <span><strong>Đánh mất gốc rễ:</strong> Tiếp thu văn hóa thế giới một cách thụ động, dễ dẫn đến hiện tượng "bắt chước máy móc" làm lu mờ giá trị Việt Nam.</span>
+              </li>
+              <li className="flex gap-2 border-t border-brand-gold/10 pt-4 text-brand-parchment font-semibold italic text-xs md:text-sm">
+                <span>Câu hỏi đặt ra: Làm sao để hội nhập quốc tế bình đẳng nhưng vẫn giữ vững tư duy độc lập, đạo đức và bản sắc dân tộc?</span>
               </li>
             </ul>
           </motion.div>

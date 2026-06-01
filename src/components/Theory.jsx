@@ -70,7 +70,7 @@ export default function Theory() {
       <div className="max-w-6xl w-full z-10 flex flex-col items-center">
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <span className="font-cinzel text-brand-gold text-sm tracking-widest font-bold border-b border-brand-gold/30 pb-2">SECTION III</span>
+          <span className="font-cinzel text-brand-gold text-sm tracking-widest font-bold border-b border-brand-gold/30 pb-2">SECTION II</span>
           <h2 className="font-cinzel text-3xl md:text-5xl font-black text-brand-parchment mt-4">
             CƠ SỞ LÝ LUẬN
           </h2>

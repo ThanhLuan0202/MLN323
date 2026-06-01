@@ -1,13 +1,14 @@
 import React from 'react';
-import { Presentation, Scroll, BookOpen, Compass, Award, ShieldAlert, CheckSquare, MessageSquare } from 'lucide-react';
+import { Presentation, Scroll, BookOpen, Compass, Award, ShieldAlert, CheckSquare, MessageSquare, Sparkles } from 'lucide-react';
 
 const sections = [
-  { id: 'hero', title: 'Mở Đầu', icon: BookOpen, roman: 'I' },
-  { id: 'intro', title: 'Đặt Vấn Đề', icon: Compass, roman: 'II' },
-  { id: 'theory', title: 'Lý Luận', icon: Award, roman: 'III' },
-  { id: 'app', title: 'Thực Tiễn', icon: ShieldAlert, roman: 'IV' },
-  { id: 'solution', title: 'Bài Học', icon: CheckSquare, roman: 'V' },
-  { id: 'conclusion', title: 'Kết Luận', icon: MessageSquare, roman: 'VI' }
+  { id: 'hero', title: 'Mở Đầu', icon: BookOpen, roman: '' },
+  { id: 'intro', title: 'Đặt Vấn Đề', icon: Compass, roman: 'I' },
+  { id: 'theory', title: 'Lý Luận', icon: Award, roman: 'II' },
+  { id: 'app', title: 'Thực Tiễn', icon: ShieldAlert, roman: 'III' },
+  { id: 'solution', title: 'Bài Học', icon: CheckSquare, roman: 'IV' },
+  { id: 'conclusion', title: 'Kết Luận', icon: MessageSquare, roman: 'V' },
+  { id: 'aiused', title: 'AI Used', icon: Sparkles, roman: 'VI' }
 ];
 
 export default function Navigation({ viewMode, setViewMode, activeSection, scrollToSection, currentSlide, setCurrentSlide }) {
@@ -56,7 +57,9 @@ export default function Navigation({ viewMode, setViewMode, activeSection, scrol
                   : 'text-[#9ca3af] hover:text-[#f3f4f6] hover:bg-white/5 border border-transparent'
               }`}
             >
-              <span className="font-cinzel text-brand-gold font-semibold text-xs border-r border-brand-gold/20 pr-1.5">{sec.roman}</span>
+              {sec.roman && (
+                <span className="font-cinzel text-brand-gold font-semibold text-xs border-r border-brand-gold/20 pr-1.5">{sec.roman}</span>
+              )}
               <span>{sec.title}</span>
             </button>
           );

@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Keyboard } from 'lucide-react';
 
 const sections = [
-  { roman: 'I', title: 'Mở Đầu' },
-  { roman: 'II', title: 'Đặt Vấn Đề' },
-  { roman: 'III', title: 'Lý Luận' },
-  { roman: 'IV', title: 'Thực Tiễn' },
-  { roman: 'V', title: 'Bài Học' },
-  { roman: 'VI', title: 'Kết Luận' }
+  { roman: '', title: 'Mở Đầu' },
+  { roman: 'I', title: 'Đặt Vấn Đề' },
+  { roman: 'II', title: 'Lý Luận' },
+  { roman: 'III', title: 'Thực Tiễn' },
+  { roman: 'IV', title: 'Bài Học' },
+  { roman: 'V', title: 'Kết Luận' },
+  { roman: 'VI', title: 'AI Used' }
 ];
 
 export default function SlideControls({ currentSlide, setCurrentSlide, totalSlides }) {
@@ -51,7 +52,7 @@ export default function SlideControls({ currentSlide, setCurrentSlide, totalSlid
       {/* Center Progress bar & Slide names */}
       <div className="flex flex-col items-center gap-2 w-full max-w-md">
         <div className="flex justify-between items-center w-full text-xs font-semibold text-brand-bronze font-sans">
-          <span>{sections[currentSlide].roman}. {sections[currentSlide].title}</span>
+          <span>{sections[currentSlide].roman ? `${sections[currentSlide].roman}. ` : ''}{sections[currentSlide].title}</span>
           <span className="font-cinzel text-brand-gold">{currentSlide + 1} / {totalSlides}</span>
         </div>
         <div className="w-full h-1.5 bg-brand-red/10 border border-brand-gold/10 rounded-full overflow-hidden">
