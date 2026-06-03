@@ -213,7 +213,7 @@ export default function AIUsed() {
           className="mt-12 bg-brand-red/5 border border-brand-gold/20 px-6 py-4 rounded-xl max-w-2xl text-center shadow-lg"
         >
           <span className="text-xs md:text-sm font-semibold text-brand-gold font-sans tracking-wide italic">
-            “Tập thể Nhóm 3 – Lớp HCM202 cam kết tuân thủ các nguyên tắc đạo đức học thuật, ứng dụng trí tuệ nhân tạo một cách minh bạch, trung thực và có trách nhiệm.”
+            “Tập thể Nhóm 7 – Lớp HCM202 cam kết tuân thủ các nguyên tắc đạo đức học thuật, ứng dụng trí tuệ nhân tạo một cách minh bạch, trung thực và có trách nhiệm.”
           </span>
         </motion.div>
       </motion.div>
