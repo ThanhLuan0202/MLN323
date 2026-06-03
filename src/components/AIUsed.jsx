@@ -1,37 +1,24 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Eye, Shield, GraduationCap, Check, X, FileText, Compass } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Eye, Shield, Sparkles, GraduationCap, CheckCircle } from 'lucide-react';
 
 export default function AIUsed() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 }
+      transition: { staggerChildren: 0.15 }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 0.6, ease: 'easeOut' }
     }
   };
-
-  // Close modal when pressing Esc key
-  React.useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        setIsModalOpen(false);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   return (
     <section 
@@ -45,343 +32,191 @@ export default function AIUsed() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="max-w-6xl w-full z-10 flex flex-col items-center"
+        className="max-w-5xl w-full z-10 flex flex-col items-center"
       >
         {/* Section Heading */}
-        <motion.div variants={itemVariants} className="text-center mb-16">
+        <motion.div variants={itemVariants} className="text-center mb-10">
           <span className="font-cinzel text-brand-gold text-sm tracking-widest font-bold border-b border-brand-gold/30 pb-2">
             SECTION VI
           </span>
           <h2 className="font-cinzel text-3xl md:text-5xl font-black text-brand-parchment mt-4 uppercase">
-            AI Used
+            AI Usage Policy
           </h2>
           <p className="font-playfair text-brand-bronze text-base md:text-lg italic mt-2">
-            Công nghệ trí tuệ nhân tạo đồng hành cùng dự án
+            Nguyên tắc ứng dụng trí tuệ nhân tạo minh bạch và có trách nhiệm
           </p>
         </motion.div>
 
-        {/* AI Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full max-w-4xl mt-4">
+        {/* Academic Requirement Frame */}
+        <motion.div 
+          variants={itemVariants}
+          className="bg-brand-gold/5 border border-brand-gold/20 rounded-2xl p-5 mb-10 max-w-3xl w-full text-center shadow-[inset_0_0_15px_rgba(212,175,55,0.05)]"
+        >
+          <p className="font-sans text-xs md:text-sm text-brand-gold-light leading-relaxed">
+            <strong className="text-brand-gold font-bold">Khung yêu cầu học thuật:</strong> Học phần HCM202 – Tư tưởng Hồ Chí Minh khuyến khích sinh viên chủ động tiếp cận công nghệ mới, đồng thời yêu cầu tuyệt đối về trách nhiệm cá nhân, đạo đức học thuật và sự minh bạch trong việc sử dụng các trợ lý AI hỗ trợ dự án.
+          </p>
+        </motion.div>
+
+        {/* 2x2 Grid of Paraphrased AI Principles */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl">
           
-          {/* Card 1: Google Gemini */}
+          {/* Card 1: Minh Bạch Công Cụ */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col items-center text-center bg-brand-dark-card/65 backdrop-blur-md border border-brand-gold/15 rounded-3xl p-8 md:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.5)] glow-red hover:border-purple-500/40 hover:shadow-[0_15px_40px_rgba(147,51,234,0.15)] transition-all duration-500 group relative overflow-hidden"
+            className="flex flex-col bg-brand-dark-card/65 backdrop-blur-md border border-brand-gold/15 rounded-2xl p-6 shadow-md hover:border-purple-500/30 hover:shadow-[0_0_20px_rgba(147,51,234,0.1)] transition-all duration-300 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-bl-full pointer-events-none -z-10" />
+            <div className="absolute top-0 right-0 w-16 h-16 bg-purple-500/5 rounded-bl-full pointer-events-none" />
             
-            {/* Custom Gemini Icon with Purple Gradient */}
-            <div className="w-16 h-16 rounded-2xl bg-purple-950/20 border border-purple-500/20 flex items-center justify-center shadow-[0_0_15px_rgba(147,51,234,0.15)] group-hover:scale-110 group-hover:border-purple-400 group-hover:shadow-[0_0_25px_rgba(147,51,234,0.3)] transition-all duration-500 mb-8 relative">
-              <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]">
-                <defs>
-                  <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#c084fc" />
-                    <stop offset="100%" stopColor="#6366f1" />
-                  </linearGradient>
-                </defs>
-                <path 
-                  d="M12 2Q12 12 22 12Q12 12 12 22Q12 12 2 12Q12 12 12 2Z" 
-                  fill="url(#geminiGrad)"
-                />
-              </svg>
+            <div className="flex items-center gap-3.5 mb-4 border-b border-brand-gold/10 pb-3">
+              <div className="w-9 h-9 rounded-full bg-purple-950/20 border border-purple-500/30 flex items-center justify-center text-purple-400 group-hover:scale-105 transition-transform">
+                <Eye size={16} />
+              </div>
+              <div>
+                <span className="text-[10px] font-sans text-brand-gold font-bold uppercase tracking-wider block leading-none">Phần 1</span>
+                <h3 className="font-cinzel text-md font-bold text-brand-parchment">Minh Bạch Công Cụ</h3>
+              </div>
             </div>
 
-            <h3 className="font-cinzel text-2xl font-bold text-brand-parchment tracking-wide group-hover:text-purple-300 transition-colors">
-              Google Gemini
-            </h3>
-            
-            <p className="font-sans text-xs font-bold text-brand-gold uppercase tracking-[0.2em] mt-1.5 mb-6">
-              Soạn thảo nội dung
-            </p>
-
-            <p className="font-sans text-xs md:text-sm text-gray-400 leading-relaxed max-w-xs mb-8 flex-grow">
-              Nghiên cứu, tổng hợp và chắt lọc các luận điểm cốt lõi về Tư tưởng Hồ Chí Minh. Hỗ trợ soạn thảo nội dung thuyết trình khoa học và xây dựng cơ sở dữ liệu học thuật cho trợ lý AI.
-            </p>
-
-            <button className="px-6 py-2.5 rounded-full border border-purple-500/30 bg-purple-950/20 text-purple-300 font-sans font-bold text-xs tracking-wider uppercase hover:bg-purple-900/30 hover:border-purple-400 hover:text-purple-200 transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-[0_4px_15px_rgba(147,51,234,0.1)]">
-              <span>Content & Research</span>
-            </button>
+            <div className="space-y-4 flex-grow">
+              <div className="bg-brand-dark/40 border border-brand-gold/5 rounded-xl p-3.5">
+                <span className="text-purple-400 text-xs font-bold font-sans flex items-center gap-1.5 mb-1">
+                  ✦ Google Gemini
+                </span>
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  Hỗ trợ nghiên cứu lý luận, tìm kiếm nguồn tư liệu trích dẫn và xây dựng sườn nội dung chính thống cho các đề mục thuyết trình.
+                </p>
+              </div>
+              <div className="bg-brand-dark/40 border border-brand-gold/5 rounded-xl p-3.5">
+                <span className="text-brand-gold text-xs font-bold font-sans flex items-center gap-1.5 mb-1">
+                  ✦ Antigravity
+                </span>
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  Đồng hành lập trình giao diện tương tác, tối ưu hóa CSS động (Framer Motion) và phát triển trợ lý chatbot học thuật thông minh.
+                </p>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Card 2: Antigravity */}
+          {/* Card 2: Kiểm Chứng & Trách Nhiệm */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col items-center text-center bg-brand-dark-card/65 backdrop-blur-md border border-brand-gold/15 rounded-3xl p-8 md:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.5)] glow-gold hover:border-brand-gold/40 hover:shadow-[0_15px_40px_rgba(212,175,55,0.15)] transition-all duration-500 group relative overflow-hidden"
+            className="flex flex-col bg-brand-dark-card/65 backdrop-blur-md border border-brand-gold/15 rounded-2xl p-6 shadow-md hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all duration-300 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-bl-full pointer-events-none -z-10" />
+            <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/5 rounded-bl-full pointer-events-none" />
 
-            {/* Custom Antigravity Icon with Gold Gradient */}
-            <div className="w-16 h-16 rounded-2xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:scale-110 group-hover:border-brand-gold group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] transition-all duration-500 mb-8 relative">
-              <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-brand-gold drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">
-                <defs>
-                  <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#F3E5AB" />
-                    <stop offset="100%" stopColor="#D4AF37" />
-                  </linearGradient>
-                </defs>
-                <path 
-                  d="M12 4Q12 12 20 12Q12 12 12 20Q12 12 4 12Q12 12 12 4Z" 
-                  fill="url(#goldGrad)"
-                  transform="rotate(15 12 12)"
-                />
-              </svg>
+            <div className="flex items-center gap-3.5 mb-4 border-b border-brand-gold/10 pb-3">
+              <div className="w-9 h-9 rounded-full bg-blue-950/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-105 transition-transform">
+                <Shield size={16} />
+              </div>
+              <div>
+                <span className="text-[10px] font-sans text-brand-gold font-bold uppercase tracking-wider block leading-none">Phần 2</span>
+                <h3 className="font-cinzel text-md font-bold text-brand-parchment">Kiểm Chứng & Trách Nhiệm</h3>
+              </div>
             </div>
 
-            <h3 className="font-cinzel text-2xl font-bold text-brand-parchment tracking-wide group-hover:text-brand-gold transition-colors">
-              Antigravity
-            </h3>
+            <div className="space-y-3.5 flex-grow font-sans text-xs">
+              <div className="flex items-start gap-2.5 bg-brand-dark/30 p-3 rounded-lg border border-brand-gold/5">
+                <CheckCircle size={14} className="text-brand-gold shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-brand-parchment block mb-0.5">Xác thực đa chiều</strong>
+                  <p className="text-gray-400 leading-relaxed">Đối chiếu chéo mọi thông tin do AI đề xuất với giáo trình và tài liệu nghiên cứu gốc trước khi đưa vào sản phẩm cuối.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2.5 bg-brand-dark/30 p-3 rounded-lg border border-brand-gold/5">
+                <CheckCircle size={14} className="text-brand-gold shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-brand-parchment block mb-0.5">Làm chủ học thuật</strong>
+                  <p className="text-gray-400 leading-relaxed">Sinh viên là chủ thể nghiên cứu và chịu trách nhiệm 100% về tính chính xác của dữ liệu, không ỷ lại hay để công nghệ thay thế tư duy độc lập.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
-            <p className="font-sans text-xs font-bold text-brand-gold uppercase tracking-[0.2em] mt-1.5 mb-6">
-              Lập trình & Thiết kế Web
-            </p>
+          {/* Card 3: Định Hướng Sáng Tạo */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex flex-col bg-brand-dark-card/65 backdrop-blur-md border border-brand-gold/15 rounded-2xl p-6 shadow-md hover:border-brand-gold/30 hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] transition-all duration-300 relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-16 h-16 bg-brand-gold/5 rounded-bl-full pointer-events-none" />
 
-            <p className="font-sans text-xs md:text-sm text-gray-400 leading-relaxed max-w-xs mb-8 flex-grow">
-              Lập trình toàn bộ giao diện web phản hồi tương tác, thiết lập hệ thống chuyển động mượt mà và xây dựng chatbot Trợ lý Học thuật AI trả lời thời gian thực.
-            </p>
+            <div className="flex items-center gap-3.5 mb-4 border-b border-brand-gold/10 pb-3">
+              <div className="w-9 h-9 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:scale-105 transition-transform">
+                <Sparkles size={16} />
+              </div>
+              <div>
+                <span className="text-[10px] font-sans text-brand-gold font-bold uppercase tracking-wider block leading-none">Phần 3</span>
+                <h3 className="font-cinzel text-md font-bold text-brand-parchment">Định Hướng Sáng Tạo</h3>
+              </div>
+            </div>
 
-            <button className="px-6 py-2.5 rounded-full border border-brand-gold/30 bg-brand-gold/5 text-brand-gold font-sans font-bold text-xs tracking-wider uppercase hover:bg-brand-gold/15 hover:border-brand-gold hover:text-brand-gold-light transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-[0_4px_15px_rgba(212,175,55,0.1)]">
-              <span>Web Development</span>
-            </button>
+            <div className="space-y-4 flex-grow font-sans text-xs">
+              <div className="grid grid-cols-1 gap-3">
+                <div className="bg-brand-dark/30 p-3.5 rounded-xl border border-brand-gold/5">
+                  <span className="text-brand-gold font-bold block mb-1">🎨 Trải Nghiệm Thị Giác & Tương Tác</span>
+                  <p className="text-gray-300 leading-relaxed">
+                    Sử dụng các công cụ kỹ thuật để tối ưu hóa hiệu ứng hình ảnh, cách sắp xếp bố cục hợp lý và phát triển chatbot đối thoại sinh động hỗ trợ ôn tập lý luận học thuật.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-brand-gold/5 border border-brand-gold/20 rounded-xl p-3 text-center">
+                <p className="text-[10px] text-brand-gold-light leading-relaxed">
+                  <strong className="text-brand-gold">Giá trị nguyên bản:</strong> Toàn bộ nội dung phân tích sâu sắc, hệ thống dẫn chứng lịch sử và lập luận chính trị đều được nhóm biên soạn dựa trên các tư liệu lịch sử chính thức.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 4: Cam Kết Liêm Chính */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex flex-col bg-brand-dark-card/65 backdrop-blur-md border border-brand-gold/15 rounded-2xl p-6 shadow-md hover:border-brand-red/40 hover:shadow-[0_0_20px_rgba(122,10,16,0.15)] transition-all duration-300 relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-16 h-16 bg-brand-red/5 rounded-bl-full pointer-events-none" />
+
+            <div className="flex items-center gap-3.5 mb-4 border-b border-brand-gold/10 pb-3">
+              <div className="w-9 h-9 rounded-full bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red group-hover:scale-105 transition-transform">
+                <GraduationCap size={16} />
+              </div>
+              <div>
+                <span className="text-[10px] font-sans text-brand-gold font-bold uppercase tracking-wider block leading-none">Phần 4</span>
+                <h3 className="font-cinzel text-md font-bold text-brand-parchment">Cam Kết Liêm Chính</h3>
+              </div>
+            </div>
+
+            <div className="space-y-3.5 flex-grow font-sans text-xs">
+              <div className="flex items-start gap-2.5 bg-brand-dark/30 p-3 rounded-lg border border-brand-gold/5">
+                <div className="w-5 h-5 rounded-full bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold text-[10px] shrink-0">
+                  1
+                </div>
+                <div>
+                  <strong className="text-brand-parchment block mb-0.5">Tôn trọng học thuật</strong>
+                  <p className="text-gray-400 leading-relaxed">Không sao chép nguyên bản đầu ra của AI. Mọi thông tin đều phải được cá nhân hóa, biên tập và bổ sung sâu bởi thành viên nhóm.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2.5 bg-brand-dark/30 p-3 rounded-lg border border-brand-gold/5">
+                <div className="w-5 h-5 rounded-full bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red font-bold text-[10px] shrink-0">
+                  2
+                </div>
+                <div>
+                  <strong className="text-brand-parchment block mb-0.5">Đối chiếu nguồn gốc</strong>
+                  <p className="text-gray-400 leading-relaxed">Nội dung của sản phẩm được rút ra từ <strong>"Giáo trình tư tưởng Hồ Chí Minh" (Bộ Giáo dục và Đào tạo, NXB Chính trị quốc gia Sự thật, năm 2021)</strong>.</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
         </div>
 
-        {/* Phụ Lục AI Button */}
-        <motion.div variants={itemVariants} className="mt-14 text-center">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-2.5 px-8 py-3.5 rounded-full font-sans text-xs md:text-sm font-bold tracking-widest text-[#0A0A0A] bg-brand-gold hover:bg-brand-gold-light border border-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.25)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
-          >
-            <FileText size={16} className="text-[#0A0A0A]" />
-            <span>PHỤ LỤC: AI USAGE</span>
-          </button>
+        {/* Group Pledge Bottom Line */}
+        <motion.div 
+          variants={itemVariants} 
+          className="mt-12 bg-brand-red/5 border border-brand-gold/20 px-6 py-4 rounded-xl max-w-2xl text-center shadow-lg"
+        >
+          <span className="text-xs md:text-sm font-semibold text-brand-gold font-sans tracking-wide italic">
+            “Tập thể Nhóm 3 – Lớp HCM202 cam kết tuân thủ các nguyên tắc đạo đức học thuật, ứng dụng trí tuệ nhân tạo một cách minh bạch, trung thực và có trách nhiệm.”
+          </span>
         </motion.div>
       </motion.div>
-
-      {/* Pop-up Modal overlay with AnimatePresence */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <div className="fixed inset-0 z-50 overflow-y-auto">
-            {/* Backdrop */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsModalOpen(false)}
-              className="fixed inset-0 bg-brand-dark/85 backdrop-blur-md"
-            />
-
-            {/* Modal Box wrapper */}
-            <div className="min-h-screen flex items-center justify-center p-4 md:p-8">
-              <motion.div
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 50, scale: 0.95 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-                className="relative w-full max-w-4xl bg-brand-dark-card border border-brand-gold/35 rounded-3xl p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.85)] glow-gold overflow-hidden"
-              >
-                {/* Background red/gold soft gradients */}
-                <div className="absolute -top-40 -left-40 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none" />
-
-                {/* Close Button */}
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="absolute top-4 right-4 md:top-6 md:right-6 w-8 h-8 rounded-full border border-brand-gold/20 flex items-center justify-center text-brand-parchment hover:text-brand-gold hover:border-brand-gold transition-colors cursor-pointer z-50 bg-brand-dark/40"
-                  aria-label="Đóng phụ lục"
-                >
-                  <X size={16} />
-                </button>
-
-                {/* Modal Content */}
-                <div className="relative z-10 max-h-[80vh] overflow-y-auto pr-2 scrollbar-thin">
-                  {/* Top Badge */}
-                  <div className="flex justify-center mb-4">
-                    <span className="flex items-center gap-1.5 px-3 py-1 bg-brand-red/10 border border-brand-red/35 text-brand-gold font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] rounded-full uppercase">
-                      <FileText size={12} className="text-brand-gold" />
-                      Phụ lục: AI Usage
-                    </span>
-                  </div>
-
-                  {/* Modal Header Title */}
-                  <h3 className="font-cinzel text-center text-2xl md:text-4xl font-black text-brand-parchment mb-4 leading-tight">
-                    Nguyên tắc sử dụng AI trong dự án học tập và nghiên cứu
-                  </h3>
-
-                  {/* Golden Line Divider */}
-                  <div className="h-0.5 w-24 bg-brand-gold mx-auto mb-8" />
-
-                  {/* Course requirements highlight box */}
-                  <div className="bg-brand-gold/5 border border-brand-gold/30 rounded-2xl p-5 mb-10 max-w-3xl mx-auto text-center shadow-inner">
-                    <p className="font-sans text-xs md:text-sm text-brand-gold-light leading-relaxed">
-                      <strong className="text-brand-gold">Yêu cầu môn học:</strong> Môn HCM202 – Tư tưởng Hồ Chí Minh yêu cầu sinh viên ứng dụng AI có trách nhiệm và đạo đức, đồng thời phải có giải trình cụ thể về việc sử dụng AI trong quá trình làm ra sản phẩm.
-                    </p>
-                  </div>
-
-                  {/* Grid Sections */}
-                  <div className="space-y-12">
-                    
-                    {/* Section 1: Minh Bạch */}
-                    <div className="border border-brand-gold/15 rounded-2xl overflow-hidden shadow-md">
-                      {/* Header bar */}
-                      <div className="bg-brand-red/90 p-4 border-b border-brand-gold/20 flex items-center gap-3.5 relative">
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.1),transparent_60%)]" />
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-parchment shrink-0">
-                          <Eye size={16} />
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-sans text-brand-gold font-bold uppercase tracking-wider block leading-none">1.</span>
-                          <h4 className="font-cinzel text-md font-bold text-brand-parchment leading-tight">Minh Bạch</h4>
-                          <span className="text-[9px] text-brand-parchment/60 font-sans tracking-wide">Công Cụ Và Mục Đích Sử Dụng</span>
-                        </div>
-                      </div>
-                      {/* Content inside */}
-                      <div className="p-5 bg-brand-dark/40 grid grid-cols-1 md:grid-cols-3 gap-5">
-                        <div className="bg-brand-dark-card border border-brand-gold/10 rounded-xl p-4 flex flex-col gap-2 hover:border-brand-gold/25 transition-all">
-                          <span className="text-brand-gold text-xs font-bold font-sans flex items-center gap-1">🤖 ChatGPT</span>
-                          <p className="text-xs text-gray-300 leading-relaxed">Hỗ trợ tìm kiếm và tổng hợp thông tin cho website để hệ thống lý luận chặt chẽ hơn.</p>
-                        </div>
-                        <div className="bg-brand-dark-card border border-brand-gold/10 rounded-xl p-4 flex flex-col gap-2 hover:border-brand-gold/25 transition-all">
-                          <span className="text-brand-gold text-xs font-bold font-sans flex items-center gap-1">📚 NotebookLM</span>
-                          <p className="text-xs text-gray-300 leading-relaxed">Trích xuất thông tin lý thuyết trực tiếp từ giáo trình Tư tưởng Hồ Chí Minh, giáo trình Lịch sử Đảng Cộng sản Việt Nam và các nguồn báo chí chính thống.</p>
-                        </div>
-                        <div className="bg-brand-dark-card border border-brand-gold/10 rounded-xl p-4 flex flex-col gap-2 hover:border-brand-gold/25 transition-all">
-                          <span className="text-brand-gold text-xs font-bold font-sans flex items-center gap-1">💻 Claude</span>
-                          <p className="text-xs text-gray-300 leading-relaxed">Hỗ trợ thiết kế giao diện và chỉnh sửa CSS cho website, có thể xây dựng một website hoàn chỉnh.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Section 2: Có Trách Nhiệm */}
-                    <div className="border border-brand-gold/15 rounded-2xl overflow-hidden shadow-md">
-                      {/* Header bar */}
-                      <div className="bg-slate-900 p-4 border-b border-brand-gold/20 flex items-center gap-3.5">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-parchment shrink-0">
-                          <Shield size={16} />
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-sans text-brand-gold font-bold uppercase tracking-wider block leading-none">2.</span>
-                          <h4 className="font-cinzel text-md font-bold text-brand-parchment leading-tight">Có Trách Nhiệm</h4>
-                          <span className="text-[9px] text-brand-parchment/60 font-sans tracking-wide">Kiểm Chứng & Trách Nhiệm Cá Nhân</span>
-                        </div>
-                      </div>
-                      {/* Content list */}
-                      <div className="p-5 bg-brand-dark/40 space-y-3.5">
-                        <div className="flex items-start gap-3 bg-brand-dark-card/50 border border-brand-gold/5 rounded-xl p-4">
-                          <div className="w-5 h-5 rounded-full bg-emerald-950/30 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
-                            <Check size={12} />
-                          </div>
-                          <div>
-                            <strong className="text-brand-parchment font-sans text-xs md:text-sm block mb-1">Kiểm Chứng Thông Tin</strong>
-                            <p className="text-xs text-gray-300 leading-relaxed">Tất cả thông tin do AI hỗ trợ đều được kiểm chứng lại bằng giáo trình và các văn bản, nghị quyết chính thống.</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3 bg-brand-dark-card/50 border border-brand-gold/5 rounded-xl p-4">
-                          <div className="w-5 h-5 rounded-full bg-emerald-950/30 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
-                            <Check size={12} />
-                          </div>
-                          <div>
-                            <strong className="text-brand-parchment font-sans text-xs md:text-sm block mb-1">Trách Nhiệm Cá Nhân</strong>
-                            <p className="text-xs text-gray-300 leading-relaxed">Nhóm chịu trách nhiệm hoàn toàn về nội dung cuối cùng, không để AI thay thế toàn bộ quá trình học tập và nghiên cứu.</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3 bg-brand-dark-card/50 border border-brand-gold/5 rounded-xl p-4">
-                          <div className="w-5 h-5 rounded-full bg-emerald-950/30 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
-                            <Check size={12} />
-                          </div>
-                          <div>
-                            <strong className="text-brand-parchment font-sans text-xs md:text-sm block mb-1">Học Tập Tích Cực</strong>
-                            <p className="text-xs text-gray-300 leading-relaxed">AI chỉ là công cụ hỗ trợ, không thay thế việc học tập và nghiên cứu của sinh viên.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Section 3: Sáng Tạo */}
-                    <div className="border border-brand-gold/15 rounded-2xl overflow-hidden shadow-md">
-                      {/* Header bar */}
-                      <div className="bg-brand-gold p-4 border-b border-brand-gold/25 flex items-center gap-3.5 text-brand-dark font-bold">
-                        <div className="w-8 h-8 rounded-full bg-brand-dark/15 flex items-center justify-center text-brand-dark shrink-0">
-                          <Sparkles size={16} />
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-sans text-brand-dark/80 font-bold uppercase tracking-wider block leading-none">3.</span>
-                          <h4 className="font-cinzel text-md font-black leading-tight text-brand-dark">Sáng Tạo</h4>
-                          <span className="text-[9px] text-brand-dark/65 font-sans tracking-wide">Ứng Dụng AI Trong Sáng Tạo</span>
-                        </div>
-                      </div>
-                      {/* Content grid & note */}
-                      <div className="p-5 bg-brand-dark/40 space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <div className="bg-brand-dark-card border border-brand-gold/10 rounded-xl p-4 flex flex-col gap-1.5 hover:border-brand-gold/25 transition-all">
-                            <span className="text-brand-gold text-xs font-bold font-sans flex items-center gap-1.5">🎨 Thiết Kế Và Hình Ảnh</span>
-                            <p className="text-xs text-gray-300 leading-relaxed">Ảnh minh họa, thiết kế giao diện, chỉnh sửa CSS.</p>
-                          </div>
-                          <div className="bg-brand-dark-card border border-brand-gold/10 rounded-xl p-4 flex flex-col gap-1.5 hover:border-brand-gold/25 transition-all">
-                            <span className="text-brand-gold text-xs font-bold font-sans flex items-center gap-1.5">⚡ Tương Tác Và Trò Chơi</span>
-                            <p className="text-xs text-gray-300 leading-relaxed">Gợi ý câu hỏi và tích hợp vào chatbot đối thoại ôn tập lý luận.</p>
-                          </div>
-                        </div>
-                        <div className="bg-brand-gold/5 border border-brand-gold/20 rounded-xl p-4 text-center">
-                          <p className="text-xs text-brand-gold-light leading-relaxed">
-                            <strong className="text-brand-gold">Lưu ý:</strong> Nội dung học thuật: Nội dung phân tích, dẫn chứng và lập luận học thuật được nhóm biên soạn dựa trên tài liệu chính thống.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Section 4: Liêm Chính Học Thuật */}
-                    <div className="border border-brand-gold/15 rounded-2xl overflow-hidden shadow-md">
-                      {/* Header bar */}
-                      <div className="bg-brand-red/90 p-4 border-b border-brand-gold/20 flex items-center gap-3.5">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-parchment shrink-0">
-                          <GraduationCap size={16} />
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-sans text-brand-gold font-bold uppercase tracking-wider block leading-none">4.</span>
-                          <h4 className="font-cinzel text-md font-bold text-brand-parchment leading-tight">Liêm Chính Học Thuật</h4>
-                          <span className="text-[9px] text-brand-parchment/60 font-sans tracking-wide">Cam Kết Học Thuật</span>
-                        </div>
-                      </div>
-                      {/* Content list with numbers */}
-                      <div className="p-5 bg-brand-dark/40 space-y-4">
-                        <div className="flex items-start gap-3 bg-brand-dark-card/50 border border-brand-gold/5 rounded-xl p-4">
-                          <div className="w-6 h-6 rounded-full bg-brand-red text-brand-parchment flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                            1
-                          </div>
-                          <div>
-                            <strong className="text-brand-parchment font-sans text-xs md:text-sm block mb-1">Cam Kết</strong>
-                            <p className="text-xs text-gray-300 leading-relaxed">Không để AI làm thay hoàn toàn, mà chỉ sử dụng như công cụ hỗ trợ.</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3 bg-brand-dark-card/50 border border-brand-gold/5 rounded-xl p-4">
-                          <div className="w-6 h-6 rounded-full bg-brand-red text-brand-parchment flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                            2
-                          </div>
-                          <div>
-                            <strong className="text-brand-parchment font-sans text-xs md:text-sm block mb-1">Phân Định Rõ</strong>
-                            <p className="text-xs text-gray-300 leading-relaxed">Các kết quả AI sinh ra đều được chú thích và có phần chỉnh sửa, bổ sung bởi sinh viên.</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3 bg-brand-dark-card/50 border border-brand-gold/5 rounded-xl p-4">
-                          <div className="w-6 h-6 rounded-full bg-brand-red text-brand-parchment flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                            3
-                          </div>
-                          <div>
-                            <strong className="text-brand-parchment font-sans text-xs md:text-sm block mb-1">Đối Chiếu Nguồn</strong>
-                            <p className="text-xs text-gray-300 leading-relaxed">Nội dung của sản phẩm được rút ra từ "Giáo trình tư tưởng Hồ Chí Minh" 2021.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
